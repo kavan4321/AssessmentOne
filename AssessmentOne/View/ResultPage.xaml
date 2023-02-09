@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssessmentOne.View.ResultPage"
+             Title="ResultPage"
+             BackgroundColor="LightBlue">
+
+    <StackLayout VerticalOptions="Center">
+        <Image 
+            Margin="0,0,0,10"
+            Source="gold"  
+            HeightRequest="120"
+            HorizontalOptions="Center"></Image>
+        <Label
+            Margin="10"
+            HorizontalOptions="Center"
+            FontSize="45"
+            FontFamily="Homemade Sausage"
+            TextColor="OrangeRed"
+            Text="Excellent!!!"></Label>
+        <Label
+            Margin="10"
+            HorizontalOptions="Center"
+            FontSize="30"
+            FontFamily="Homemade Sausage"
+            TextColor="DodgerBlue"
+            Text="John Doe"></Label>
+        <Label
+            Margin="10"
+            HorizontalOptions="Center"
+            FontSize="40"
+            FontFamily="christmas"
+            TextColor="BlueViolet"
+            Text="Your Point: 50"></Label>
+        <Button
+            Margin="20"
+            HeightRequest="60"
+            CornerRadius="30"
+            FontSize="30"
+            BackgroundColor="DeepSkyBlue"
+            FontFamily="Homemade Sausage"
+            Text="Replay"
+            
+           ></Button>
+        
+        
+    </StackLayout>
+</ContentPage>

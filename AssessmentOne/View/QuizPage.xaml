@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssessmentOne.View.QuizPage"
+             NavigationPage.HasBackButton="False"
+             Title="Quiz">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label 
+                Margin="10"
+                Text="Quiz"
+                TextColor="White"
+                FontSize="21"
+                FontFamily="Homemade Sausage"          
+            ></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout>
+           
+            <Grid 
+                Margin="10,40,10,10"
+                RowDefinitions="*"
+                ColumnDefinitions="*,*"
+                >
+                <HorizontalStackLayout 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <Label 
+                        Text="Question 1/"
+                        TextColor="OrangeRed"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="30"                                                
+                        FontFamily="Winkle-Regular"
+                    ></Label>
+                    <Label 
+                        Text="5"
+                        FontSize="30"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        FontFamily="Winkle-Regular"                        
+                        TextColor="OrangeRed"></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    >
+                    <Label                        
+                        FontSize="30"
+                        FontFamily="Winkle-Regular"
+                        TextColor="SeaGreen"
+                        Text="Points:"></Label>
+                    <Label                       
+                        FontSize="30"
+                        FontFamily="Winkle-Regular"
+                        TextColor="OrangeRed"
+                        Text="0"></Label>
+                </HorizontalStackLayout>
+            </Grid>
+            <ProgressBar 
+                Margin="10,10"></ProgressBar>
+            <Label
+                Margin="10"
+                FontSize="30"
+                FontFamily="Homemade Sausage"
+                Text="What is the capital of India?"></Label>
+
+            <Grid
+                Padding="10"
+                RowDefinitions="*,*,*,*"
+                ColumnDefinitions="*"
+                >
+            <RadioButton
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="10"
+                Content="Delhi"
+                CornerRadius="10"
+                TextColor="SeaGreen"
+                FontSize="30"
+                BorderWidth="2"
+                BorderColor="SeaGreen"
+                BackgroundColor="white"
+                VerticalOptions="Center"
+                FontFamily="Homemade Sausage"></RadioButton>
+
+                <RadioButton
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="10"
+                Content="Mumbai"
+                CornerRadius="10"
+                TextColor="SeaGreen"
+                FontSize="30"
+                BorderWidth="2"
+                BorderColor="SeaGreen"
+                BackgroundColor="white"
+                FontFamily="Homemade Sausage"></RadioButton>
+
+                <RadioButton
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="10"
+                BackgroundColor="white"
+                Content="Kolkata"
+                CornerRadius="10"
+                TextColor="SeaGreen"
+                FontSize="30"
+                BorderWidth="2"
+                BorderColor="SeaGreen"
+                FontFamily="Homemade Sausage"></RadioButton>
+
+
+                <RadioButton
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="10"
+                Content="Chennai"
+                CornerRadius="10"
+                BackgroundColor="white"
+                TextColor="SeaGreen"
+                FontSize="30"
+                BorderWidth="2"
+                BorderColor="SeaGreen"
+                FontFamily="Homemade Sausage"></RadioButton>
+            </Grid>
+            <Label
+                IsVisible="false"
+                Margin="10"
+                TextColor="SeaGreen"
+                FontSize="16"
+                HorizontalOptions="Center"   
+                FontFamily="Homemade Sausage"
+                Text="You have 2 attempt Left"></Label>
+            <Button
+                Margin="10,20,10,0"
+                HeightRequest="60"
+                CornerRadius="30"
+                Text="Submit"
+                TextColor="SeaGreen"
+                FontSize="30"
+                BackgroundColor="LightCyan"
+                FontFamily="Homemade Sausage"
+                VerticalOptions="EndAndExpand"
+                ></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

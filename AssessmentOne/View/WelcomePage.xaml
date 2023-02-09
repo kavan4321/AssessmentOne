@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssessmentOne.View.WelcomePage"
+             xmlns:QuizWelcome="clr-namespace:AssessmentOne.ViewModel.Welcome"
+             NavigationPage.HasBackButton="False"
+             Title="Quiz">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label 
+            Margin="10"
+            Text="Quiz"
+            TextColor="White"
+            FontSize="21"
+            FontFamily="Homemade Sausage"          
+             ></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.BindingContext>
+        <QuizWelcome:WelcomePageViewModel></QuizWelcome:WelcomePageViewModel>
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <StackLayout 
+       >
+       
+        <Label
+            Text="Welcome"
+            TextColor="SeaGreen"
+            Margin="20,20,0,0"
+            HorizontalOptions="StartAndExpand"
+            FontFamily="christmas"
+            FontSize="35"></Label>
+
+        <Label
+            x:Name="WelcomeName"
+            VerticalTextAlignment="Center"
+            HorizontalOptions="StartAndExpand"
+            Margin="20,0,0,20"
+            Text="{Binding homePageName.PlayerName}"
+            TextColor="OrangeRed"
+            FontFamily="christmas"
+            FontSize="50"
+            ></Label>
+            <Label
+                Text="Game Rules:"
+                Margin="20,0,0,0"
+                FontSize="25"
+                FontFamily="Homemade Sausage"
+                TextColor="BlueViolet"
+                ></Label>
+            <Grid 
+                RowDefinitions="*,*,*,*"
+                ColumnDefinitions="50,*" 
+                RowSpacing="10"
+                Padding="20">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontFamily="Winkle-Regular"
+                    FontSize="40"
+                    TextColor="SeaGreen"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="1."></Label>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1" 
+                    FontSize="20"
+                    TextColor="LightCoral"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    FontFamily="Homemade Sausage"
+                    Text="For every right answer 10 points will be granted."></Label>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontFamily="Winkle-Regular"
+                    FontSize="40"
+                    TextColor="SeaGreen"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="2."></Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1" 
+                    FontSize="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    TextColor="LightCoral"
+                    FontFamily="Homemade Sausage"
+                    Text="You Will get 3 attempts to give right answer for each question."></Label>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontFamily="Winkle-Regular"
+                    FontSize="40"
+                    TextColor="SeaGreen"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="3."></Label>
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1" 
+                    FontSize="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    TextColor="LightCoral"
+                    FontFamily="Homemade Sausage"
+                    Text="for every wrong attempt 5 points will be deducted."></Label>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontFamily="Winkle-Regular"
+                    FontSize="40"
+                    TextColor="SeaGreen"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="4."></Label>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1" 
+                    FontSize="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    FontFamily="Homemade Sausage"
+                    TextColor="LightCoral"
+                    Text="After 3 wrong attempts game will be finish"></Label>
+            </Grid>
+            <Button
+                x:Name="StartButton"
+                Clicked="StartButton_Clicked"
+                CornerRadius="30"
+                HeightRequest="70"
+                Margin="0,10,0,0"
+                Text="Start Game"
+                BackgroundColor="CornflowerBlue"
+                FontSize="25"
+                FontFamily="Homemade Sausage"
+                VerticalOptions="EndAndExpand"></Button>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
