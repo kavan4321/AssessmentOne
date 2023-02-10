@@ -2,13 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AssessmentOne.View.ResultPage"
+             xmlns:Results="clr-namespace:AssessmentOne.ViewModel.ResultPageShow"
              Title="ResultPage"
              BackgroundColor="LightBlue">
+    <ContentPage.BindingContext>
+        <Results:ResultPageViewModel></Results:ResultPageViewModel>
+    </ContentPage.BindingContext>
 
     <StackLayout VerticalOptions="Center">
         <Image 
+            
             Margin="0,0,0,10"
-            Source="gold"  
+            Source="{Binding ImageShow.Source}"  
             HeightRequest="120"
             HorizontalOptions="Center"></Image>
         <Label
@@ -24,7 +29,7 @@
             FontSize="30"
             FontFamily="Homemade Sausage"
             TextColor="DodgerBlue"
-            Text="John Doe"></Label>
+            Text="{Binding PlayerName}"></Label>
         <Label
             Margin="10"
             HorizontalOptions="Center"
@@ -34,6 +39,8 @@
             Text="Your Point: 50"></Label>
         <Button
             Margin="20"
+            Clicked="Button_Clicked"
+            Command="{Binding ReplayCommand}"
             HeightRequest="60"
             CornerRadius="30"
             FontSize="30"

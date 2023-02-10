@@ -130,6 +130,7 @@
                     Text="After 3 wrong attempts game will be finish"></Label>
             </Grid>
             <Button
+                Command="{Binding StartCommand}"
                 x:Name="StartButton"
                 Clicked="StartButton_Clicked"
                 CornerRadius="30"

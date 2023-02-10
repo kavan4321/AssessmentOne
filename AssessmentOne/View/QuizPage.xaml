@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AssessmentOne.View.QuizPage"
              NavigationPage.HasBackButton="False"
+             xmlns:Question="clr-namespace:AssessmentOne.ViewModel.QuestionAnswer"
              Title="Quiz">
+    <ContentPage.BindingContext>
+        <Question:QuizPageViewModel></Question:QuizPageViewModel>
+    </ContentPage.BindingContext>
     <NavigationPage.TitleView>
         <StackLayout>
             <Label 
@@ -17,27 +21,26 @@
     </NavigationPage.TitleView>
     <ScrollView>
         <StackLayout>
-           
-            <Grid 
+            <Grid
                 Margin="10,40,10,10"
                 RowDefinitions="*"
                 ColumnDefinitions="*,*"
                 >
-                <HorizontalStackLayout 
+                <HorizontalStackLayout
                     Grid.Column="0"
                     Grid.Row="0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
-                    <Label 
-                        Text="Question 1/"
+                    <Label
+                        Text="{Binding CurrentQuestion,StringFormat='Question {0}/'}"
                         TextColor="OrangeRed"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="CenterAndExpand"
                         FontSize="30"                                                
                         FontFamily="Winkle-Regular"
                     ></Label>
-                    <Label 
-                        Text="5"
+                    <Label
+                        Text="{Binding TotalQuestion}"
                         FontSize="30"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="CenterAndExpand"
@@ -55,59 +58,69 @@
                         FontFamily="Winkle-Regular"
                         TextColor="SeaGreen"
                         Text="Points:"></Label>
-                    <Label                       
+                    <Label   
+                        x:Name="PointLabel"
                         FontSize="30"
                         FontFamily="Winkle-Regular"
                         TextColor="OrangeRed"
-                        Text="0"></Label>
+                        Text="{Binding Points}"></Label>
                 </HorizontalStackLayout>
             </Grid>
-            <ProgressBar 
-                Margin="10,10"></ProgressBar>
+            <ProgressBar
+                Margin="10,10"
+                Progress="{Binding Progress}"></ProgressBar>
             <Label
                 Margin="10"
                 FontSize="30"
                 FontFamily="Homemade Sausage"
-                Text="What is the capital of India?"></Label>
+                Text="{Binding Que}"></Label>
 
             <Grid
                 Padding="10"
                 RowDefinitions="*,*,*,*"
                 ColumnDefinitions="*"
                 >
-            <RadioButton
+                <RadioButton
                 Grid.Row="0"
                 Grid.Column="0"
+                x:Name="OptionsOne"
+                CheckedChanged="Option1_CheckedChanged"
                 Margin="10"
-                Content="Delhi"
+                Content="{Binding Option1}"
                 CornerRadius="10"
+               
                 TextColor="SeaGreen"
                 FontSize="30"
                 BorderWidth="2"
-                BorderColor="SeaGreen"
-                BackgroundColor="white"
+                BorderColor="SeaGreen"              
                 VerticalOptions="Center"
                 FontFamily="Homemade Sausage"></RadioButton>
 
                 <RadioButton
                 Grid.Row="1"
                 Grid.Column="0"
+                x:Name="OptionsTwo"
+                 CheckedChanged="Option2_CheckedChanged"
                 Margin="10"
-                Content="Mumbai"
+                
+                Content="{Binding Option2}"
                 CornerRadius="10"
                 TextColor="SeaGreen"
                 FontSize="30"
                 BorderWidth="2"
                 BorderColor="SeaGreen"
-                BackgroundColor="white"
+                
                 FontFamily="Homemade Sausage"></RadioButton>
 
                 <RadioButton
                 Grid.Row="2"
                 Grid.Column="0"
+                    x:Name="OptionThree"
+                    CheckedChanged="Option3_CheckedChanged"
                 Margin="10"
-                BackgroundColor="white"
-                Content="Kolkata"
+               
+                
+                Content="{Binding Option3}"
                 CornerRadius="10"
                 TextColor="SeaGreen"
                 FontSize="30"
@@ -119,35 +132,44 @@
                 <RadioButton
                 Grid.Row="3"
                 Grid.Column="0"
+                x:Name="OptionFour"
+                CheckedChanged="Option4_CheckedChanged"
                 Margin="10"
-                Content="Chennai"
+                
+                Content="{Binding Option4}"
                 CornerRadius="10"
-                BackgroundColor="white"
+               
                 TextColor="SeaGreen"
                 FontSize="30"
                 BorderWidth="2"
                 BorderColor="SeaGreen"
                 FontFamily="Homemade Sausage"></RadioButton>
             </Grid>
-            <Label
-                IsVisible="false"
+           
+            <Label 
+                x:Name="ErrorLabel"
                 Margin="10"
                 TextColor="SeaGreen"
                 FontSize="16"
-                HorizontalOptions="Center"   
+                HorizontalOptions="Center"  
                 FontFamily="Homemade Sausage"
-                Text="You have 2 attempt Left"></Label>
+                ></Label>
+
+
             <Button
                 Margin="10,20,10,0"
                 HeightRequest="60"
                 CornerRadius="30"
                 Text="Submit"
+                x:Name="SubmitButton"
+                Clicked="Button_Clicked"
+                Command="{Binding SubmitCommand}"
                 TextColor="SeaGreen"
                 FontSize="30"
                 BackgroundColor="LightCyan"
                 FontFamily="Homemade Sausage"
                 VerticalOptions="EndAndExpand"
-                ></Button>
+            ></Button>
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace AssessmentOne.Model
 {
-    class ResultPageModel
+    public class ResultPageModel
     {
+        public string Result { get; set; }
+        public int ResultPoint { get => 40; }
+        public string PlayerName
+        {
+            get => "Kavan Patel";
+        }
+        public Image ImageShow { get; set; }
+
+        public int TotalPoint 
+        {
+            get => 50;
+        }
+
     }
 }
